@@ -71,7 +71,9 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent); outline-o
 .marquee .track{display:inline-flex; gap:48px; padding-right:48px}
 .marquee span{font:700 clamp(26px,3.4vw,44px)/1 var(--display); font-stretch:110%; text-transform:uppercase; letter-spacing:-.01em}
 .marquee i{font-style:normal; color:var(--accent)}
-@media (prefers-reduced-motion:no-preference){ .marquee .inner{display:inline-flex; animation:slide 38s linear infinite} @keyframes slide{to{transform:translateX(-50%)}} }
+@keyframes slide{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+.marquee .inner{display:inline-flex; will-change:transform; animation:slide 38s linear infinite}
+@media (prefers-reduced-motion:reduce){ .marquee .inner{animation-duration:90s} }
 
 /* Secciones */
 section{padding-block:clamp(64px,9vw,128px)}
@@ -267,6 +269,12 @@ footer{margin-top:clamp(56px,7vw,96px); border-top:1px solid var(--line); paddin
 
 /* logo: símbolo-botão + nome */
 .top .logo{align-items:center}.top .logo .mk{width:1.5em;height:1.5em;flex:0 0 auto;display:block}
+
+/* cabeçalho compacto: símbolo + nome numa linha só */
+.top .logo{flex-wrap:nowrap; white-space:nowrap; grid-column:span 4}
+.top nav{grid-column:span 5}
+@media (max-width:1240px){ .top .logo small{display:none} }
+@media (max-width:900px){ .top .logo{grid-column:span 7} .top .status{grid-column:span 5; white-space:nowrap} .top .logo small{display:none} }
 </style>
 <style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
