@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Consultoría de moda para tiendas y marcas: estrategia, formación de equipos, visual merchandising, styling y editoriales de imagen. En tienda y en remoto, en toda España.">
+<meta property="og:title" content="Studio Foco · Consultoría de moda">
+<meta property="og:description" content="Consultoría de moda para tiendas y marcas: estrategia, formación de equipos, visual merchandising, styling y editoriales de imagen. En tienda y en remoto, en toda España.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="apple-touch-icon" href="img/favicon-180.png">
+<title>Studio Foco · Consultoría de moda</title>
+<link rel="icon" type="image/png" href="img/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Tema único oscuro, elegido a propósito. Layout: retícula suiza de 12 columnas a sangre; tipografía gigante como protagonista, fotos de proyecto como única fuente de color, índice de trabajos y servicios en filas */
+:root{
+  --bg:#0B0B0C; --fg:#EDEDE8; --muted:#8C8C87; --line:#EDEDE8; --soft:#262626; --accent:#7489FF; --on-accent:#0B0B0C;
+  --display:"Archivo", "Arial Narrow", Arial, sans-serif;
+  --body:"Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"Geist Mono", ui-monospace, Consolas, monospace;
+  --pad:clamp(16px,2.4vw,32px);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{margin:0; background:var(--bg); color:var(--fg); font:400 16px/1.55 var(--body); overflow-x:hidden}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+.px{padding-inline:var(--pad)}
+.mono{font:400 12px/1.4 var(--mono); letter-spacing:.04em; text-transform:uppercase}
+.muted{color:var(--muted)}
+.grid{display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:var(--pad)}
+.disp{font-family:var(--display); font-stretch:72%; font-weight:800; letter-spacing:-.02em; line-height:.86; text-transform:uppercase; margin:0}
+
+/* Barra superior */
+.top{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:var(--bg); border-bottom:1px solid var(--line);
+  padding-block:12px; align-items:center}
+.top .logo{grid-column:span 3; font:800 17px/1 var(--display); font-stretch:115%; letter-spacing:-.01em}
+.top .logo{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap}
+.top .logo sup{font-size:.55em; vertical-align:top; margin-left:1px}
+.top .logo small{font-stretch:100%; font-weight:400; color:var(--muted); font-size:11px}
+.top nav{grid-column:span 6; display:flex; gap:22px}
+.top nav a:hover{color:var(--accent)}
+.top .status{grid-column:span 3; text-align:right; display:flex; gap:10px; justify-content:flex-end; align-items:center}
+.dot{width:8px; height:8px; border-radius:50%; background:var(--accent); display:inline-block}
+@media (prefers-reduced-motion:no-preference){ .dot{animation:blink 2s infinite} @keyframes blink{50%{opacity:.25}} }
+
+/* Hero */
+.hero{padding-block:clamp(28px,5vw,56px) 0}
+.hero .meta{grid-column:1/-1; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:clamp(20px,3vw,36px)}
+.hero h1{grid-column:1/-1; font-size:clamp(40px,10.4vw,184px)}
+.hero h1 .o{font-stretch:125%; font-weight:300; letter-spacing:-.04em}
+.hero h1 .a{color:var(--accent)}
+.hero .intro{grid-column:7/span 5; margin-top:clamp(28px,4vw,48px); font-size:clamp(18px,1.7vw,22px); line-height:1.4; max-width:36ch}
+.hero .cta-row{grid-column:7/span 6; display:flex; gap:12px; flex-wrap:wrap; margin-top:24px}
+.hero .kpis{grid-column:7/span 6; display:flex; flex-wrap:wrap; gap:6px 18px; margin:22px 0 0; padding-top:14px; border-top:1px solid var(--soft)}
+.btn{display:inline-flex; align-items:center; gap:10px; padding:14px 22px; border:1px solid var(--fg); border-radius:999px; font:500 14px/1 var(--body); transition:background .2s,color .2s}
+.btn:hover{background:var(--fg); color:var(--bg)}
+.btn.fill{background:var(--accent); border-color:var(--accent); color:var(--on-accent)}
+.btn.fill:hover{background:var(--fg); border-color:var(--fg); color:var(--bg)}
+.hero-img{margin-top:clamp(36px,5vw,64px); position:relative}
+.hero-img img{width:100%; aspect-ratio:16/8; object-fit:cover; object-position:center 35%}
+.hero-img .cap{position:absolute; left:var(--pad); bottom:14px; color:#fff; mix-blend-mode:difference}
+
+/* Marquesina de marcas */
+.marquee{border-block:1px solid var(--line); overflow:hidden; white-space:nowrap; padding-block:18px}
+.marquee .track{display:inline-flex; gap:48px; padding-right:48px}
+.marquee span{font:700 clamp(26px,3.4vw,44px)/1 var(--display); font-stretch:110%; text-transform:uppercase; letter-spacing:-.01em}
+.marquee i{font-style:normal; color:var(--accent)}
+@media (prefers-reduced-motion:no-preference){ .marquee .inner{display:inline-flex; animation:slide 38s linear infinite} @keyframes slide{to{transform:translateX(-50%)}} }
+
+/* Secciones */
+section{padding-block:clamp(64px,9vw,128px)}
+.sh{align-items:end; margin-bottom:clamp(28px,4vw,48px)}
+.sh .n{grid-column:span 2}
+.sh h2{grid-column:span 7; font-size:clamp(44px,7vw,112px)}
+.sh p{grid-column:span 3; margin:0; max-width:34ch}
+
+/* Cifras */
+.stats{border-top:1px solid var(--line)}
+.stats > div{grid-column:span 3; padding-top:18px; min-width:0}
+.stats b{display:block; font:800 clamp(56px,8vw,128px)/.85 var(--display); font-stretch:72%; letter-spacing:-.02em; font-variant-numeric:tabular-nums}
+.stats span{display:block; margin-top:12px; max-width:22ch}
+.award{grid-column:1/-1; margin-top:clamp(28px,4vw,44px); padding-top:14px; border-top:1px solid var(--soft); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap}
+
+/* Trabajos: mosaico + índice */
+.works{row-gap:var(--pad)}
+.works figure{margin:0; min-width:0}
+.works .ph{overflow:hidden; background:var(--soft)}
+.works img{width:100%; height:100%; object-fit:cover; transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.works figure:hover img{transform:scale(1.035)}
+.works figcaption{display:flex; justify-content:space-between; gap:12px; padding-top:10px}
+.wk{grid-column:span 4} .wk .ph{aspect-ratio:3/4}
+.w1{grid-column:1/span 8} .w1 .ph{aspect-ratio:16/10}
+.w2{grid-column:9/span 4} .w2 .ph{aspect-ratio:3/4.1}
+.w3{grid-column:1/span 4} .w3 .ph{aspect-ratio:3/4}
+.w4{grid-column:5/span 4} .w4 .ph{aspect-ratio:3/4}
+.w5{grid-column:9/span 4} .w5 .ph{aspect-ratio:3/4}
+.w6{grid-column:1/span 5} .w6 .ph{aspect-ratio:4/5}
+.w7{grid-column:6/span 7} .w7 .ph{aspect-ratio:7/6}
+
+.index{margin-top:clamp(56px,7vw,96px); border-top:1px solid var(--line)}
+.index .row{grid-column:1/-1; display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:var(--pad); padding-block:16px; border-bottom:1px solid var(--soft); align-items:baseline}
+.index .row > *{min-width:0}
+.index .row .c1{grid-column:span 1} .index .row .c2{grid-column:span 5; font:700 clamp(20px,2.2vw,30px)/1.1 var(--display); font-stretch:95%; letter-spacing:-.01em}
+.index .row .c3{grid-column:span 3} .index .row .c4{grid-column:span 3; text-align:right}
+.index .row.head{border-bottom:1px solid var(--line); padding-block:10px}
+.index .row.head .c2{font:400 12px/1.4 var(--mono)}
+.index .row:not(.head):hover .c2{color:var(--accent)}
+.peek{position:fixed; z-index:30; width:240px; aspect-ratio:3/4; pointer-events:none; object-fit:cover; opacity:0; transform:translate(-50%,-50%) scale(.92); transition:opacity .2s, transform .2s}
+.peek.on{opacity:1; transform:translate(-50%,-50%) scale(1)}
+
+/* Estudio */
+.about{align-items:start; row-gap:28px}
+.about figure{grid-column:1/span 4; margin:0; min-width:0}
+.about figure img{width:100%; aspect-ratio:4/5; object-fit:cover}
+.about figcaption{padding-top:10px}
+.about .txt{grid-column:6/span 7; min-width:0; display:grid; gap:18px}
+.about .txt p{margin:0; color:var(--muted); font-size:17px; max-width:60ch}
+.about .txt p.big{color:var(--fg); font:700 clamp(24px,2.6vw,36px)/1.15 var(--display); font-stretch:92%; letter-spacing:-.015em; max-width:28ch}
+.about .cv{list-style:none; padding:0; margin:10px 0 0; border-top:1px solid var(--line)}
+.about .cv li{display:grid; grid-template-columns:120px 1fr; gap:16px; padding-block:12px; border-bottom:1px solid var(--soft)}
+.about .cv li span:first-child{color:var(--muted)}
+
+/* Servicios */
+.pk{border-top:1px solid var(--line)}
+.pk article{grid-column:span 4; padding:22px 0 0; min-width:0; display:flex; flex-direction:column; gap:12px}
+.pk article + article{border-left:1px solid var(--soft); padding-left:var(--pad)}
+.pk h3{font:800 clamp(30px,3.2vw,44px)/.92 var(--display); font-stretch:80%; text-transform:uppercase; margin:0; letter-spacing:-.01em}
+.pk .price{font:800 clamp(44px,5vw,76px)/.9 var(--display); font-stretch:72%; letter-spacing:-.02em; font-variant-numeric:tabular-nums}
+.pk .price small{font:400 14px var(--mono); letter-spacing:0; color:var(--muted); margin-left:6px}
+.pk p{margin:0; color:var(--muted); max-width:34ch}
+.pk ul{list-style:none; padding:0; margin:6px 0 0; display:grid; gap:6px}
+.pk li::before{content:"+ "; color:var(--accent)}
+.pk .flag{align-self:flex-start; background:var(--accent); color:var(--on-accent); padding:5px 9px; border-radius:999px}
+.pk .lbl{display:flex; justify-content:space-between; gap:12px; align-items:center; min-height:24px}
+
+.svc{margin-top:clamp(56px,7vw,96px)}
+.svc .grp{grid-column:1/-1; display:flex; justify-content:space-between; gap:16px; border-bottom:1px solid var(--line); padding-bottom:10px; margin-top:28px}
+.svc details{grid-column:1/-1; border-bottom:1px solid var(--soft)}
+.svc summary{list-style:none; cursor:pointer; display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:var(--pad); padding-block:18px; align-items:baseline}
+.svc summary::-webkit-details-marker{display:none}
+.svc summary > *{min-width:0}
+.svc .i{grid-column:span 1}
+.svc .t{grid-column:span 7; font:700 clamp(22px,2.6vw,36px)/1.05 var(--display); font-stretch:92%; letter-spacing:-.015em}
+.svc .p{grid-column:span 3; text-align:right; color:var(--accent)}
+.svc .x{grid-column:span 1; text-align:right; font:300 28px/1 var(--display); transition:transform .25s}
+.svc details[open] .x{transform:rotate(45deg)}
+.svc summary:hover .t{color:var(--accent)}
+.svc .d{display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:var(--pad); padding-bottom:22px}
+.svc .d p{grid-column:2/span 6; margin:0; color:var(--muted); font-size:17px}
+.svc .d .who{grid-column:9/span 4; text-align:right}
+.fine{grid-column:1/-1; margin-top:20px}
+
+/* Hero: subtítulo */
+.hero h1 .sub{display:block; font-size:.36em; line-height:1; margin-top:.35em; letter-spacing:-.01em}
+.ph.empty{display:grid; place-items:center; background:repeating-linear-gradient(135deg,var(--soft) 0 1px,transparent 1px 14px); border:1px solid var(--soft)}
+.hero-empty{aspect-ratio:16/8; width:100%}
+/* Frentes */
+.fronts{margin-top:clamp(56px,7vw,96px); display:grid; gap:clamp(48px,6vw,88px)}
+.front{border-top:1px solid var(--line); padding-top:clamp(20px,3vw,32px); align-items:start}
+.front .fimg{grid-column:span 5; margin:0; min-width:0}
+.front .fimg .ph{aspect-ratio:4/5; overflow:hidden}
+.front .fimg img{width:100%; height:100%; object-fit:cover; display:block}
+.front .ftxt{grid-column:7/span 6; min-width:0}
+.front h3{font:800 clamp(44px,6vw,96px)/.88 var(--display); font-stretch:72%; text-transform:uppercase; letter-spacing:-.02em; margin:12px 0 16px}
+.front .fdesc{margin:0 0 24px; font-size:clamp(18px,1.7vw,22px); line-height:1.4; max-width:36ch}
+.front ul{list-style:none; padding:0; margin:0; border-top:1px solid var(--soft)}
+.front li{display:grid; gap:4px; padding-block:14px; border-bottom:1px solid var(--soft)}
+.front li b{font:700 clamp(18px,1.8vw,22px)/1.2 var(--display); font-stretch:95%}
+.front li span{color:var(--muted); font-size:15px}
+.front:nth-child(even) .fimg{grid-column:8/span 5; grid-row:1}
+.front:nth-child(even) .ftxt{grid-column:1/span 6; grid-row:1}
+#servicios > .fine{margin-top:32px}
+/* Trabajos: casos que enlazan al portfolio */
+.cases{border-top:1px solid var(--line)}
+.case{grid-column:span 6; display:grid; grid-template-columns:48px 1fr; column-gap:16px; row-gap:6px; padding-block:20px; border-bottom:1px solid var(--soft); text-decoration:none; min-width:0}
+.case .ct{font:700 clamp(22px,2.4vw,32px)/1.1 var(--display); font-stretch:92%}
+.case span:last-child{grid-column:2}
+.case:hover .ct{color:var(--accent)}
+.case-cta{grid-column:1/-1; margin-top:28px}
+footer a{text-decoration:none} footer a:hover{color:var(--accent)}
+
+/* Hero en dos columnas con imagen */
+.hero h1{grid-column:1/span 7 !important; font-size:clamp(40px,7.4vw,132px) !important}
+.hero .intro,.hero .cta-row,.hero .kpis{grid-column:1/span 6 !important}
+.hero .hero-fig{grid-column:8/span 5; grid-row:2/span 4; margin:0; align-self:start}
+.hero .hero-fig img{width:100%; aspect-ratio:3/4; object-fit:cover; display:block}
+.hero{padding-bottom:clamp(40px,6vw,80px)}
+@media (max-width:900px){
+  .hero h1,.hero .intro,.hero .cta-row,.hero .kpis{grid-column:1/-1 !important}
+  .hero .hero-fig{grid-column:1/-1; grid-row:auto; margin-top:28px; max-width:560px}
+}
+.hero .hero-fig .ia{padding-top:10px}
+/* word-spacing fix: tipo condensado precisa de espaço entre palavras maior */
+.disp,.disp *,.front h3,.pk h3,.pk .price,.stats b,.steps h3,.procimg .ptxt p.big{word-spacing:.2em}
+/* Proceso */
+.steps{border-top:1px solid var(--line)}
+.steps li{grid-column:span 3; list-style:none; padding-top:16px; min-width:0}
+.steps ol{display:contents}
+.steps h3{font:800 clamp(30px,3.4vw,52px)/.9 var(--display); font-stretch:72%; text-transform:uppercase; margin:14px 0 10px}
+.steps p{margin:0; color:var(--muted); max-width:28ch}
+
+/* Proceso con imágenes */
+.procimg{margin-top:clamp(40px,6vw,72px); row-gap:var(--pad); align-items:start}
+.procimg figure{margin:0; min-width:0}
+.procimg .ph{overflow:hidden; background:var(--soft)}
+.procimg img{width:100%; height:100%; object-fit:cover; display:block}
+.procimg figcaption{display:flex; justify-content:space-between; gap:12px; padding-top:10px}
+.procimg .wide{grid-column:span 6} .procimg .wide .ph{aspect-ratio:16/9}
+.procimg .tall{grid-column:span 3} .procimg .tall .ph{aspect-ratio:3/4}
+.procimg .ptxt{grid-column:span 6; align-self:end; display:grid; gap:14px; min-width:0}
+.procimg .ptxt p{margin:0; color:var(--muted); max-width:46ch}
+.procimg .ptxt p.big{color:var(--fg); font:800 clamp(34px,4.4vw,64px)/.9 var(--display); font-stretch:72%; text-transform:uppercase; letter-spacing:-.02em}
+
+/* Calendario */
+.cal-wrap{overflow-x:auto}
+.cal{display:grid; grid-template-columns:repeat(12,minmax(84px,1fr)); min-width:1000px; border-top:1px solid var(--line)}
+.cal div{padding:14px 12px 18px 0; border-right:1px solid var(--soft); min-height:120px}
+.cal div + div{padding-left:12px}
+.cal div:last-child{border-right:0}
+.cal .e{font:700 17px/1.15 var(--display); font-stretch:92%; margin-top:30px}
+.cal .hot .m{color:var(--accent)}
+.cal .hot .e::before{content:""; display:block; width:8px; height:8px; border-radius:50%; background:var(--accent); margin-bottom:10px}
+
+/* Contacto */
+.contact{border-top:1px solid var(--line); padding-block:clamp(48px,7vw,96px) 0}
+.contact h2{grid-column:1/-1; font-size:clamp(76px,19vw,320px); line-height:.8}
+.contact h2 .a{color:var(--accent)}
+.contact .lead{grid-column:1/span 6; margin:24px 0 0; font-size:clamp(18px,1.7vw,22px); line-height:1.4; max-width:40ch}
+.contact .c{grid-column:span 4; border-top:1px solid var(--soft); padding-top:14px; margin-top:clamp(28px,4vw,48px); min-width:0}
+.contact .c b{display:block; margin-top:8px; font:700 clamp(20px,2.2vw,28px)/1.2 var(--display); font-stretch:95%; user-select:all; overflow-wrap:anywhere}
+footer{margin-top:clamp(56px,7vw,96px); border-top:1px solid var(--line); padding-block:16px 28px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap}
+
+@media (max-width:900px){
+  .top nav{display:none}
+  .top .logo{grid-column:span 6} .top .status{grid-column:span 6}
+  .hero .intro,.hero .cta-row,.hero .kpis{grid-column:1/-1}
+  .hero-img img{aspect-ratio:4/3}
+  .sh .n{grid-column:1/-1; margin-bottom:10px} .sh h2{grid-column:1/-1} .sh p{grid-column:1/-1; margin-top:16px}
+  .stats > div{grid-column:span 6; margin-bottom:28px}
+  .wk{grid-column:span 6}
+  .w1,.w7{grid-column:1/-1} .w2,.w3,.w4,.w5,.w6{grid-column:span 6}
+  .w1 .ph,.w7 .ph{aspect-ratio:4/3} .w2 .ph,.w3 .ph,.w4 .ph,.w5 .ph,.w6 .ph{aspect-ratio:3/4}
+  .w5{display:none}
+  .index .row .c1{display:none} .index .row .c2{grid-column:span 7} .index .row .c3{display:none} .index .row .c4{grid-column:span 5}
+  .pk article{grid-column:1/-1; padding-bottom:28px} .pk article + article{border-left:0; padding-left:0; border-top:1px solid var(--soft)}
+  .svc .i{display:none} .svc .t{grid-column:span 8} .svc .p{grid-column:span 3} .svc .x{grid-column:span 1}
+  .svc .d p{grid-column:1/-1} .svc .d .who{grid-column:1/-1; text-align:left; margin-top:10px}
+  .steps li{grid-column:span 6; margin-bottom:28px}
+  .contact .c,.contact .lead{grid-column:1/-1}
+  .front .fimg,.front .ftxt,.front:nth-child(even) .fimg,.front:nth-child(even) .ftxt{grid-column:1/-1; grid-row:auto}
+  .front .fimg{max-width:520px}
+  .case{grid-column:1/-1}
+  .hero-empty{aspect-ratio:4/3}
+  .procimg .wide,.procimg .ptxt{grid-column:1/-1} .procimg .tall{grid-column:span 6}
+  .about figure{grid-column:1/-1; max-width:420px} .about .txt{grid-column:1/-1}
+}
+@media (max-width:520px){
+  .svc .t{grid-column:1/-1} .svc .p{grid-column:span 10; text-align:left; margin-top:6px} .svc .x{grid-column:span 2}
+  .steps li{grid-column:1/-1}
+}
+
+/* logo: símbolo-botão + nome */
+.top .logo{align-items:center}.top .logo .mk{width:1.5em;height:1.5em;flex:0 0 auto;display:block}
+</style>
+<style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<div class="top grid px">
+  <a class="logo" href="#"><svg class="mk" viewBox="222 222 636 636" aria-hidden="true"><circle cx="540" cy="540" r="270" fill="none" stroke="#7489FF" stroke-width="96"/><g fill="#FF5A1F"><circle cx="482" cy="482" r="38"/><circle cx="598" cy="482" r="38"/><circle cx="482" cy="598" r="38"/><circle cx="598" cy="598" r="38"/></g></svg><span>STUDIO FOCO<sup>°</sup></span><small class="mono">Consultoría de moda</small></a>
+  <nav class="mono"><a href="#servicios">Servicios</a><a href="#estudio">Estudio</a><a href="#trabajos">Trabajos</a><a href="#proceso">Proceso</a><a href="#contacto">Contacto</a></nav>
+  <div class="status mono"><span class="dot" aria-hidden="true"></span><span>Agenda abierta</span></div>
+</div>
+
+<header class="hero">
+  <div class="grid px">
+    <div class="meta mono muted"><span>Studio Foco · Consultoría de moda</span><span>Consultoría · Formación · Visual merchandising · Styling · Editoriales</span><span>España · En tienda y en remoto</span></div>
+    <h1 class="disp">Tienda,<br><span class="o">imagen</span><br>y equipo.<span class="a sub">Con método de grandes marcas.</span></h1>
+    <figure class="hero-fig"><img src="img/gen-hero-cor.jpg" alt="Modelo con vestido escultórico fucsia entre peanas geométricas azul cobalto y naranja sobre fondo magenta"><figcaption class="mono muted ia">Imagen creada con IA en el estudio</figcaption></figure>
+    <p class="intro">Consultoría de moda para tiendas y marcas: estrategia, formación de equipos, visual merchandising, styling y editoriales de imagen.</p>
+    <div class="cta-row"><a class="btn fill" href="https://wa.me/34607447393?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20diagn%C3%B3stico%20de%20Studio%20Foco." target="_blank" rel="noopener">Solicita tu diagnóstico por WhatsApp</a><a class="btn" href="https://thmlima.netlify.app/es/" target="_blank" rel="noopener">Ver portfolio ↗</a></div>
+    <p class="kpis mono muted"><span>20+ años en retail de moda</span><span>12 países</span><span>20+ tiendas abiertas</span><span>2.000+ profesionales formados</span></p>
+  </div>
+</header>
+
+<div class="marquee" aria-label="Frentes del estudio">
+  <div class="inner">
+    <div class="track"><span>Consultoría</span><i>✱</i><span>Formación</span><i>✱</i><span>Visual merchandising</span><i>✱</i><span>Styling de moda</span><i>✱</i><span>Editoriales de imagen</span><i>✱</i><span>Imágenes con IA</span><i>✱</i><span>Branding</span><i>✱</i></div>
+    <div class="track" aria-hidden="true"><span>Consultoría</span><i>✱</i><span>Formación</span><i>✱</i><span>Visual merchandising</span><i>✱</i><span>Styling de moda</span><i>✱</i><span>Editoriales de imagen</span><i>✱</i><span>Imágenes con IA</span><i>✱</i><span>Branding</span><i>✱</i></div>
+  </div>
+</div>
+
+<section class="px" id="servicios">
+  <div class="grid sh">
+    <span class="n mono muted">(01) Servicios</span>
+    <h2 class="disp">Cinco frentes,<br>un método</h2>
+    <p class="muted">De la estrategia a la imagen. En tienda y en remoto, para toda España.</p>
+  </div>
+
+  <div class="grid pk">
+    <article>
+      <div class="lbl mono muted"><span>A — Para empezar</span></div>
+      <h3>Diagnóstico</h3>
+      <div class="price">1 visita</div>
+      <p>Una visita y un informe con mejoras concretas para tu tienda o tu marca.</p>
+    </article>
+    <article>
+      <div class="lbl mono muted"><span>B — Por proyecto</span></div>
+      <h3>Proyecto</h3>
+      <div class="price">A medida</div>
+      <p>Un escaparate, una formación, un styling o un editorial, con propuesta en imagen y fecha cerrada.</p>
+    </article>
+    <article>
+      <div class="lbl mono muted"><span>C — Continuo</span><span class="flag mono">Recomendado</span></div>
+      <h3>Acompañamiento</h3>
+      <div class="price">Cada mes</div>
+      <p>Escaparates, imagen y equipo al día, mes a mes. Sin permanencia.</p>
+    </article>
+  </div>
+
+  <div class="fronts">
+    <article class="front grid" id="f01">
+      <figure class="fimg"><div class="ph"><img src="img/gen-01-consultoria.jpg" alt="Manos ordenando muestras de tejido, cartas de color y fotos de moda sobre una mesa naranja" loading="lazy"></div></figure>
+      <div class="ftxt"><span class="mono a">01</span><h3>Consultoría</h3><p class="fdesc">Estrategia para tiendas y marcas de moda: qué contar, a quién y cómo venderlo.</p><ul><li><b>Diagnóstico de tienda y marca</b><span>Visita, análisis y un informe con mejoras concretas.</span></li><li><b>Posicionamiento y estrategia comercial</b><span>Público, surtido, precio y mensaje en una misma dirección.</span></li><li><b>Calendario comercial y de campañas</b><span>Las fechas del año planificadas con tiempo.</span></li><li><b>Identidad visual para multimarca</b><span>Logotipo, colores y tipografía con guía de uso.</span></li><li><b>Comunicación visual en tienda</b><span>Rótulo, señalética, bolsas, etiquetas y tarjetas.</span></li></ul></div>
+    </article>
+    <article class="front grid" id="f02">
+      <figure class="fimg"><div class="ph"><img src="img/gen-02-formacion.jpg" alt="Formadora mostrando una chaqueta de tweed a un equipo de venta vestido de colores sobre fondo azul cobalto" loading="lazy"></div></figure>
+      <div class="ftxt"><span class="mono a">02</span><h3>Formación</h3><p class="fdesc">Equipos que venden mejor y mantienen la tienda como el primer día.</p><ul><li><b>Formación de equipos de venta</b><span>Atención, venta asistida y lectura de indicadores.</span></li><li><b>Taller de visual merchandising</b><span>Cómo exponer, reponer y mantener el orden.</span></li><li><b>Styling para vendedores</b><span>Cómo combinar y recomendar looks al cliente.</span></li><li><b>Formación online y vídeos</b><span>Contenido formativo para equipos y redes de tiendas.</span></li><li><b>Manual de exposición</b><span>Las reglas de tu tienda por escrito.</span></li></ul></div>
+    </article>
+    <article class="front grid" id="f03">
+      <figure class="fimg"><div class="ph"><img src="img/gen-03-vm.jpg" alt="Escaparate con maniquí vestido en capas de color sobre peanas, fondo verde lima" loading="lazy"></div></figure>
+      <div class="ftxt"><span class="mono a">03</span><h3>Visual merchandising</h3><p class="fdesc">La tienda como herramienta de venta, del escaparate al probador.</p><ul><li><b>Escaparate de temporada</b><span>Propuesta en imagen, materiales y montaje.</span></li><li><b>Mantenimiento mensual</b><span>Un cambio al mes y la tienda siempre al día. Sin permanencia.</span></li><li><b>Reorganización del interior</b><span>Zonas, recorrido del cliente y exposición por familias.</span></li><li><b>Escaparate a distancia</b><span>Propuesta y guía paso a paso para montarlo tú.</span></li><li><b>Render y planograma</b><span>Tienda, mobiliario y producto decididos antes de invertir.</span></li><li><b>Aperturas, lanzamientos y eventos</b><span>Concepto, producción y montaje.</span></li></ul></div>
+    </article>
+    <article class="front grid" id="f04">
+      <figure class="fimg"><div class="ph"><img src="img/gen-04-styling.jpg" alt="Estilista ajustando un abrigo texturizado a una modelo junto a un burro de ropa, fondo rosa" loading="lazy"></div></figure>
+      <div class="ftxt"><span class="mono a">04</span><h3>Styling de moda</h3><p class="fdesc">Looks que cuentan la colección, en la tienda y fuera de ella.</p><ul><li><b>Styling de escaparate y maniquíes</b><span>Looks que paran a quien pasa por delante.</span></li><li><b>Styling para campaña y lookbook</b><span>La colección contada en looks.</span></li><li><b>Styling para e-commerce</b><span>Imagen coherente en cada ficha de producto.</span></li><li><b>Styling de eventos y desfiles</b><span>Selección, pruebas y backstage.</span></li></ul></div>
+    </article>
+    <article class="front grid" id="f05">
+      <figure class="fimg"><div class="ph"><img src="img/gen-05-editorial.jpg" alt="Modelo con conjunto rojo voluminoso posando en un set azul cobalto con luces de estudio" loading="lazy"></div></figure>
+      <div class="ftxt"><span class="mono a">05</span><h3>Editoriales de imagen</h3><p class="fdesc">Imagen de moda para tu marca, de la idea a la entrega.</p><ul><li><b>Dirección de arte y concepto</b><span>La historia, la referencia y el tono de la imagen.</span></li><li><b>Producción de shooting</b><span>Equipo, casting, localización y calendario.</span></li><li><b>Lookbook y campaña</b><span>Imágenes para vender la temporada.</span></li><li><b>Contenido para redes y tienda online</b><span>Imagen y vídeo para el día a día de la marca.</span></li><li><b>Catálogos de moda</b><span>Diseño y producción del catálogo de la temporada, impreso o digital.</span></li><li><b>Imágenes con IA</b><span>Campaña, lookbook o redes generados con IA a partir de tus productos, sin coste de shooting.</span></li></ul></div>
+    </article>
+  </div>
+  <p class="fine mono muted">Tarifas a medida: te las enviamos después de una primera conversación sobre tu proyecto.</p>
+</section>
+
+<section class="px" id="estudio">
+  <div class="grid sh">
+    <span class="n mono muted">(02) Estudio</span>
+    <h2 class="disp">Quién está<br>detrás</h2>
+    <p class="muted">Un estudio pequeño, con la experiencia de una gran marca.</p>
+  </div>
+  <div class="grid about">
+    <figure><img src="img/thiago-bw.jpg" alt="Retrato en blanco y negro de Thiago Lima"><figcaption class="mono muted">Thiago Lima — Director</figcaption></figure>
+    <div class="txt">
+      <p class="big">El punto de venta es donde la estrategia deja de ser discurso y se convierte en resultado.</p>
+      <p>Studio Foco está dirigido por Thiago Lima, diseñador de moda con más de 20 años en retail de moda. Cada proyecto se mide en lo que pasa en la tienda: ticket medio, conversión y rotación de stock.</p>
+      <p>Empezó en la producción de desfiles, el vestuario para teatro y cine, y el styling y el showroom para marcas de moda. Después llevó las directrices de visual merchandising de un gran grupo internacional de calzado a 12 países, participó en la apertura de más de 20 tiendas y en una tienda conceptual premiada en el LATAM Retail Show.</p>
+      <p>Más tarde coordinó el visual merchandising y el marketing de tienda de una red de más de 380 tiendas, con más de 2.000 profesionales formados.</p>
+      <ul class="cv mono">
+        <li><span>Formación</span><span>Diseño de Moda · MBA en Comunicación y Marketing</span></li>
+        <li><span>España</span><span>Creación y Negocios de Moda · Mod'Art España</span></li>
+        <li><span>Idiomas</span><span>Español · Portugués · Inglés</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="px" id="trabajos">
+  <div class="grid sh">
+    <span class="n mono muted">(03) Trabajos</span>
+    <h2 class="disp">Trabajos para<br>grandes marcas</h2>
+    <p class="muted">Los proyectos reales, con contexto, papel y resultados, están en el portfolio de Thiago Lima.</p>
+  </div>
+  <div class="grid cases">
+    <a class="case" href="https://thmlima.netlify.app/es/" target="_blank" rel="noopener"><span class="mono muted">01</span><span class="ct">Expansión internacional en 12 países</span><span class="mono muted">Retail marketing · VM · Formación</span></a>
+    <a class="case" href="https://thmlima.netlify.app/es/" target="_blank" rel="noopener"><span class="mono muted">02</span><span class="ct">Tienda conceptual premiada</span><span class="mono muted">Visual merchandising</span></a>
+    <a class="case" href="https://thmlima.netlify.app/es/" target="_blank" rel="noopener"><span class="mono muted">03</span><span class="ct">Colaboraciones en el punto de venta</span><span class="mono muted">VM · Comunicación visual</span></a>
+    <a class="case" href="https://thmlima.netlify.app/es/" target="_blank" rel="noopener"><span class="mono muted">04</span><span class="ct">Un estándar para 380 tiendas</span><span class="mono muted">Trade marketing · VM · Formación</span></a>
+    <a class="case" href="https://thmlima.netlify.app/es/" target="_blank" rel="noopener"><span class="mono muted">05</span><span class="ct">Laboratorio de innovación</span><span class="mono muted">Experiencia · Marca · Comunicación</span></a>
+    <a class="case" href="https://thmlima.netlify.app/es/" target="_blank" rel="noopener"><span class="mono muted">06</span><span class="ct">Origen: showroom y styling</span><span class="mono muted">Styling · VM de showroom</span></a>
+    <div class="case-cta"><a class="btn fill" href="https://thmlima.netlify.app/es/" target="_blank" rel="noopener">Ver portfolio completo ↗</a></div>
+  </div>
+</section>
+
+<section class="px" id="proceso">
+  <div class="grid sh">
+    <span class="n mono muted">(04) Proceso</span>
+    <h2 class="disp">Cómo<br>trabajamos</h2>
+    <p class="muted">Lo ves en imagen antes de invertir.</p>
+  </div>
+  <div class="grid steps">
+    <ol>
+      <li><span class="mono muted">Paso 1</span><h3>Diagnóstico</h3><p>Tu tienda o tu marca, tu cliente y lo que más vendes.</p></li>
+      <li><span class="mono muted">Paso 2</span><h3>Propuesta</h3><p>Escaparate, look o editorial en imagen, con presupuesto cerrado.</p></li>
+      <li><span class="mono muted">Paso 3</span><h3>Ejecución</h3><p>Montaje, shooting o formación, con fecha cerrada.</p></li>
+      <li><span class="mono muted">Paso 4</span><h3>Seguimiento</h3><p>Ticket medio, conversión y rotación. Y ajustamos.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="px">
+  <div class="grid sh">
+    <span class="n mono muted">(05) Calendario</span>
+    <h2 class="disp">Tu año<br>comercial</h2>
+    <p class="muted">Las fechas que marcan escaparates, campañas y contenidos. En azul, las que no conviene improvisar.</p>
+  </div>
+  <div class="cal-wrap" tabindex="0" aria-label="Calendario comercial del año">
+    <div class="cal">
+      <div class="hot"><span class="m mono">Ene</span><p class="e">Rebajas de invierno</p></div>
+      <div><span class="m mono muted">Feb</span><p class="e">San Valentín</p></div>
+      <div><span class="m mono muted">Mar</span><p class="e">Día del Padre · Primavera</p></div>
+      <div><span class="m mono muted">Abr</span><p class="e">Nueva temporada</p></div>
+      <div class="hot"><span class="m mono">May</span><p class="e">Día de la Madre</p></div>
+      <div><span class="m mono muted">Jun</span><p class="e">Bodas y verano</p></div>
+      <div class="hot"><span class="m mono">Jul</span><p class="e">Rebajas de verano</p></div>
+      <div><span class="m mono muted">Ago</span><p class="e">Fin de rebajas</p></div>
+      <div class="hot"><span class="m mono">Sep</span><p class="e">Vuelta al cole · Otoño</p></div>
+      <div><span class="m mono muted">Oct</span><p class="e">Nueva temporada</p></div>
+      <div class="hot"><span class="m mono">Nov</span><p class="e">Black Friday</p></div>
+      <div class="hot"><span class="m mono">Dic</span><p class="e">Navidad y Reyes</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="contact px" id="contacto">
+  <div class="grid">
+    <h2 class="disp">Hable<span class="a">mos.</span></h2>
+    <p class="lead">Escríbenos y te respondemos en 24 horas para concertar el diagnóstico de tu tienda o tu marca.</p>
+    <div class="c"><span class="mono muted">WhatsApp</span><b><a href="https://wa.me/34607447393?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20diagn%C3%B3stico%20de%20Studio%20Foco." target="_blank" rel="noopener">+34 607 44 73 93</a></b></div>
+    <div class="c"><span class="mono muted">Instagram</span><b>@studiofoco.es</b></div>
+    <div class="c"><span class="mono muted">Email</span><b>hola@studiofoco.es</b></div>
+  </div>
+  <footer class="mono muted"><span>© 2026 Studio Foco° · Consultoría de moda</span><a href="https://thmlima.netlify.app/es/" target="_blank" rel="noopener">Portfolio · thmlima.netlify.app ↗</a><span>Las imágenes de esta página se han creado con IA en Studio Foco</span><span>España · En tienda y en remoto</span></footer>
+</div>
+</body>
+</html>
